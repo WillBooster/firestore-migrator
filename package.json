@@ -1,0 +1,68 @@
+{
+  "name": "firestore-migrator",
+  "version": "0.0.0-development",
+  "private": true,
+  "description": "A library for writing code in TypeScript for migrating Firestore collections.",
+  "homepage": "https://github.com/WillBooster/firestore-migrator",
+  "bugs": {
+    "url": "https://github.com/WillBooster/firestore-migrator/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/WillBooster/firestore-migrator.git"
+  },
+  "license": "Apache-2.0",
+  "author": "WillBooster Inc.",
+  "main": "index.js",
+  "scripts": {
+    "build": "yarn && cross-env NODE_ENV=production webpack",
+    "build-dev": "yarn && cross-env NODE_ENV=development webpack",
+    "cleanup": "yarn format && yarn lint-fix",
+    "format": "sort-package-json && yarn prettier",
+    "lint": "eslint \"./{packages/*/,}{src,__tests__}/**/*.{js,jsx,ts,tsx}\"",
+    "lint-fix": "yarn lint --fix",
+    "prettier": "prettier --write \"**/{.*/,}*.{css,htm,html,js,json,jsx,md,scss,ts,tsx,vue,yaml,yml}\" \"!**/test-fixtures/**\"",
+    "release-test": "dotenv yarn semantic-release -d",
+    "start": "dotenv -- babel-node -x .js,.jsx,.es6,.es,.ts -- src/sample.ts",
+    "typecheck": "tsc --noEmit"
+  },
+  "prettier": "@willbooster/prettier-config",
+  "dependencies": {
+    "firebase-admin": "8.10.0",
+    "lodash.clonedeep": "4.5.0",
+    "lodash.isequal": "4.5.0"
+  },
+  "devDependencies": {
+    "@babel/cli": "7.8.4",
+    "@babel/core": "7.9.0",
+    "@babel/node": "7.8.7",
+    "@babel/plugin-proposal-class-properties": "7.8.3",
+    "@babel/plugin-proposal-numeric-separator": "7.8.3",
+    "@babel/preset-env": "7.9.0",
+    "@babel/preset-typescript": "7.9.0",
+    "@types/core-js": "2.5.3",
+    "@types/lodash.clonedeep": "4.5.6",
+    "@types/lodash.isequal": "4.5.5",
+    "@types/node": "13.9.3",
+    "@typescript-eslint/eslint-plugin": "2.24.0",
+    "@typescript-eslint/parser": "2.24.0",
+    "@willbooster/eslint-config-ts": "3.0.0",
+    "@willbooster/prettier-config": "3.0.0",
+    "@willbooster/renovate-config": "3.0.0",
+    "babel-loader": "8.1.0",
+    "cross-env": "7.0.2",
+    "dotenv-cli": "3.1.0",
+    "eslint": "6.8.0",
+    "eslint-config-prettier": "6.10.1",
+    "eslint-plugin-import": "2.20.1",
+    "eslint-plugin-prettier": "3.1.2",
+    "husky": "4.2.3",
+    "lint-staged": "10.0.8",
+    "prettier": "2.0.1",
+    "semantic-release": "17.0.4",
+    "sort-package-json": "1.40.0",
+    "typescript": "3.8.3",
+    "webpack": "5.0.0-beta.13",
+    "webpack-cli": "4.0.0-beta.3"
+  }
+}
