@@ -46,7 +46,7 @@
     "@types/node": "13.9.3",
     "@typescript-eslint/eslint-plugin": "2.24.0",
     "@typescript-eslint/parser": "2.24.0",
-    "@willbooster/eslint-config-ts": "3.0.0",
+    "@willbooster/eslint-config-ts": "4.0.1",
     "@willbooster/prettier-config": "3.0.0",
     "@willbooster/renovate-config": "3.0.0",
     "babel-loader": "8.1.0",
