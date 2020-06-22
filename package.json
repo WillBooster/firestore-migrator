@@ -34,7 +34,6 @@
     "lodash.isequal": "4.5.0"
   },
   "devDependencies": {
-    "@babel/cli": "7.10.3",
     "@babel/core": "7.10.3",
     "@babel/node": "7.10.3",
     "@babel/plugin-proposal-class-properties": "7.10.1",
