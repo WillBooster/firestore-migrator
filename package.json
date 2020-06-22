@@ -1,7 +1,6 @@
 {
   "name": "firestore-migrator",
-  "version": "0.0.0-development",
-  "private": true,
+  "version": "0.0.0-semantically-released",
   "description": "A library for writing code in TypeScript for migrating Firestore collections.",
   "homepage": "https://github.com/WillBooster/firestore-migrator",
   "bugs": {
