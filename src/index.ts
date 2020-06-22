@@ -64,7 +64,10 @@ export async function modify(docSnapshots: FirebaseFirestore.DocumentSnapshot[],
   await Promise.all(promises);
 }
 
-export async function getDocumentItems(collectionPath: string): Promise<FirebaseFirestore.DocumentSnapshot[]> {
+export async function getDocumentSnapshots(
+  collectionPath: string,
+  limit?: number
+): Promise<FirebaseFirestore.DocumentSnapshot[]> {
   let docSnapshots: FirebaseFirestore.DocumentSnapshot[];
   let documents: FirebaseFirestore.DocumentReference[] = [];
 
@@ -89,6 +92,9 @@ export async function getDocumentItems(collectionPath: string): Promise<Firebase
       } else {
         if (item === '*') {
           documents = (await Promise.all(collections.map((c) => c.listDocuments()))).flat();
+          if (limit) {
+            documents = documents.slice(0, limit);
+          }
         } else {
           documents = collections.map((c) => c.doc(item));
         }
@@ -97,9 +103,10 @@ export async function getDocumentItems(collectionPath: string): Promise<Firebase
     if ((pathItems.length & 1) === 1) {
       documents = (
         await Promise.all(
-          collections.map(async (c) => {
-            const qs = await c.get();
-            return qs.docs.map((d) => d.ref);
+          collections.map(async (collection) => {
+            const limitedCollection = limit ? collection.limit(limit) : collection;
+            const querySnapshot = await limitedCollection.get();
+            return querySnapshot.docs.map((d) => d.ref);
           })
         )
       ).flat();
@@ -107,7 +114,8 @@ export async function getDocumentItems(collectionPath: string): Promise<Firebase
     docSnapshots = await Promise.all(documents.map((d) => d.get()));
   } else {
     const collection = admin.firestore().collection(collectionPath);
-    docSnapshots = (await collection.get()).docs;
+    const limitedCollection = limit ? collection.limit(limit) : collection;
+    docSnapshots = (await limitedCollection.get()).docs;
   }
   return docSnapshots;
 }

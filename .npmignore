@@ -1,0 +1,12 @@
+# Deny
+*
+
+# Allow
+!dist/**
+!lib/**
+
+!index.js
+!LICENSE
+!NOTICE
+!package.json
+!README.md

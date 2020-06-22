@@ -1,39 +1,36 @@
-import resolve from '@rollup/plugin-node-resolve';
-import commonjs from '@rollup/plugin-commonjs';
-import babel from '@rollup/plugin-babel';
-import closureCompile from '@ampproject/rollup-plugin-closure-compiler';
+import ts from '@wessberg/rollup-plugin-ts';
+import packageJson from './package.json';
 
-const extensions = ['.mjs', '.js', '.json', '.ts'];
 const plugins = [
-  resolve({ extensions }),
-  commonjs(),
-  babel({ extensions, babelHelpers: 'bundled', exclude: 'node_modules/**' }),
+  ts({
+    transpiler: 'babel',
+  }),
 ];
-if (process.env.NODE_ENV === 'production') {
-  plugins.push(closureCompile());
-}
+const external = Object.keys(packageJson.dependencies);
 
 export default [
   {
-    input: 'src/background.ts',
+    input: 'src/index.ts',
     output: [
       {
-        file: 'dist/background.js',
-        format: 'es',
+        file: 'dist/index.js',
+        format: 'cjs',
         sourcemap: true,
       },
     ],
     plugins,
+    external,
   },
   {
-    input: 'src/content_scripts.ts',
+    input: 'src/index.ts',
     output: [
       {
-        file: 'dist/content_scripts.js',
+        file: 'dist/index.mjs',
         format: 'es',
         sourcemap: true,
       },
     ],
     plugins,
+    external,
   },
 ];
