@@ -60,7 +60,7 @@
     "prettier": "2.4.0",
     "rollup": "2.56.3",
     "semantic-release": "17.4.7",
-    "sort-package-json": "1.50.0",
+    "sort-package-json": "1.51.0",
     "typescript": "3.9.10"
   }
 }
