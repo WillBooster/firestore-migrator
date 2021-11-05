@@ -33,12 +33,12 @@
     "lodash.isequal": "4.5.0"
   },
   "devDependencies": {
-    "@babel/core": "7.15.8",
-    "@babel/node": "7.15.8",
-    "@babel/plugin-proposal-class-properties": "7.14.5",
-    "@babel/plugin-proposal-numeric-separator": "7.14.5",
-    "@babel/preset-env": "7.15.8",
-    "@babel/preset-typescript": "7.15.0",
+    "@babel/core": "7.16.0",
+    "@babel/node": "7.16.0",
+    "@babel/plugin-proposal-class-properties": "7.16.0",
+    "@babel/plugin-proposal-numeric-separator": "7.16.0",
+    "@babel/preset-env": "7.16.0",
+    "@babel/preset-typescript": "7.16.0",
     "@types/lodash.clonedeep": "4.5.6",
     "@types/lodash.isequal": "4.5.5",
     "@types/node": "14.17.32",
@@ -58,7 +58,7 @@
     "husky": "4.3.8",
     "lint-staged": "10.5.4",
     "prettier": "2.4.1",
-    "rollup": "2.58.3",
+    "rollup": "2.59.0",
     "semantic-release": "17.4.7",
     "sort-package-json": "1.52.0",
     "typescript": "3.9.10"
