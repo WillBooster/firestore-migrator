@@ -50,7 +50,7 @@
     "@willbooster/renovate-config": "3.0.0",
     "babel-plugin-transform-remove-console": "6.9.4",
     "cross-env": "7.0.3",
-    "dotenv-cli": "3.2.0",
+    "dotenv-cli": "4.1.1",
     "eslint": "7.32.0",
     "eslint-config-prettier": "6.15.0",
     "eslint-plugin-import": "2.25.3",
