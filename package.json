@@ -59,7 +59,7 @@
     "lint-staged": "10.5.4",
     "prettier": "2.5.0",
     "rollup": "2.60.2",
-    "semantic-release": "17.4.7",
+    "semantic-release": "19.0.2",
     "sort-package-json": "1.53.1",
     "typescript": "3.9.10"
   }
